@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b24gna7b28oor"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(4.246826, 1, 7.787567)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+size = Vector3(3.8374023, 1, 6.807617)
+
+[node name="SubmarineShell" type="Node3D" unique_id=498088939]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1840876893]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=706614496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9659424, 0, 1.5392303)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1840548054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0568848, 0, 1.2937012)
+mesh = SubResource("BoxMesh_g4v7s")

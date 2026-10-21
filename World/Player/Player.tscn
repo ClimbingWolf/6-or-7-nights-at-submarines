@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://gsiarqsp8yvd"]
+
+[ext_resource type="Script" uid="uid://cwi6l47bq5tbc" path="res://World/Player/player.gd" id="1_kogn4"]
+[ext_resource type="Texture2D" uid="uid://dvb8nacb825dq" path="res://World/Player/happy.png" id="1_oytbf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kogn4"]
+albedo_texture = ExtResource("1_oytbf")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g4v7s"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
+
+[node name="Player" type="Node3D" unique_id=1313724276]
+script = ExtResource("1_kogn4")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=122427492]
+lock_rotation = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=329702250]
+material_override = SubResource("StandardMaterial3D_kogn4")
+mesh = SubResource("CapsuleMesh_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=15954719]
+shape = SubResource("CapsuleShape3D_g4v7s")
+
+[node name="Camera3D" type="Camera3D" parent="RigidBody3D" unique_id=1675425334]

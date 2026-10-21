@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://1gwnetrbf71u"]
+
+[ext_resource type="PackedScene" uid="uid://b24gna7b28oor" path="res://World/Submarine/Base/SubmarineShell.tscn" id="1_ihhwn"]
+[ext_resource type="PackedScene" uid="uid://gsiarqsp8yvd" path="res://World/Player/Player.tscn" id="2_n700r"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_57qmd"]
+
+[sub_resource type="Sky" id="Sky_yf5fn"]
+sky_material = SubResource("PhysicalSkyMaterial_57qmd")
+
+[sub_resource type="Environment" id="Environment_g4v7s"]
+background_mode = 2
+sky = SubResource("Sky_yf5fn")
+
+[node name="Main" type="Node3D" unique_id=244214324]
+
+[node name="SubmarineShell" parent="." unique_id=498088939 instance=ExtResource("1_ihhwn")]
+
+[node name="Player" parent="." unique_id=1313724276 instance=ExtResource("2_n700r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.523615, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1589273784]
+environment = SubResource("Environment_g4v7s")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1224644381]
+transform = Transform3D(1, 0, 0, 0, -0.39158657, 0.9201413, 0, -0.9201413, -0.39158657, 0.10707486, 15.833385, -6.919769)

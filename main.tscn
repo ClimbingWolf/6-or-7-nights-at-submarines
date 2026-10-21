@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://boih8w4ctwyds"]
+
+[ext_resource type="PackedScene" uid="uid://b24gna7b28oor" path="res://World/Submarine/Base/SubmarineShell.tscn" id="1_ihhwn"]
+[ext_resource type="PackedScene" uid="uid://gsiarqsp8yvd" path="res://World/Player/Player.tscn" id="2_n700r"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_3g2mc"]
+
+[sub_resource type="Sky" id="Sky_ihhwn"]
+sky_material = SubResource("PhysicalSkyMaterial_3g2mc")
+
+[sub_resource type="Environment" id="Environment_ihhwn"]
+background_mode = 2
+sky = SubResource("Sky_ihhwn")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 9.25
+
+[node name="Main" type="Node3D" unique_id=340683813]
+
+[node name="SubmarineShell" parent="." unique_id=498088939 instance=ExtResource("1_ihhwn")]
+
+[node name="Player" parent="." unique_id=1313724276 instance=ExtResource("2_n700r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1010349, 3.4270968, 2.8136244)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2103942648]
+environment = SubResource("Environment_ihhwn")
